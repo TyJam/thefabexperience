@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/*@import url('https://fonts.googleapis.com/css?family=Amatic+SC');*/
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,
+acronym,address,big,cite,code,del,dfn,em,img,
+ins,kbd,q,s,samp,small,strike,strong,sub,sup,
+tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,
+form,label,legend,table,caption,tbody,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,
+header,hgroup,menu,nav,section,summary,time,mark,audio,
+video{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  font:inherit;
+  vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers
+*/
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+html, body{
+  width:100vw;
+  overflow-x:hidden;
+}
+html{
+  font-size: 100%;
+}
+body{
+  line-height: normal;
+  font-weight: 400;
+}
+ol,ul{
+  list-style:none;
+}
+blockquote,q{
+  quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+  content:'';
+  content:none;
+}
+/*rememeber to define visible focus style!
+:focus{
+outline:?????;
+}*/
+/*remember hightlight insert somehow!*/
+ins{
+  text-decoration:none;
+}
+del{
+  text-decoration:line-through;
+}
+table{
+  border-collapse:collapse;
+  border-spacing:0;
+}
+html, body{
+  margin:0;
+  padding:0;
+}
+body{
+  position:absolute;
+  overflow:hidden;
+  top:0;
+  left:0;
+  display:flex;
+  flex-direction: row;
+  font-family: 'Dosis', sans-serif;
+}
+/*General style*/
+*, *:before, *:after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+a{
+  text-decoration:none;
+}
+.v-h{
+  position:absolute !important;
+  height:1px; width: 1px;
+  overflow:hidden;
+  padding:0;
+  border:0;
+  clip:rect(1px 1px 1px 1px);/* IE6, IE7 */
+  clip:rect(1px, 1px, 1px, 1px);
+
+}
+/**************************Header****************/
+header{
+  /*clear:both;*/
+  /*position:fixed;*/
+  /*float:left;*/
+  background-color:#fff;
+  z-index:999999;
+  /*height:100%;*/
+  box-shadow: 1px 0 1px 0 rgba(0, 0, 0, .12);
+  font-family: 'Montserrat', sans-serif;
+}
+h1.logo{
+  width:166px;
+  height:146px;
+  position:relative;
+  font-size:12px;
+  text-indent: -9999px;
+}
+h1.logo span{
+  background:url('../images/final feb.svg') no-repeat;
+  position:absolute;
+  width:100%;
+  height:100%;
+  display: block;
+  background-size:cover;
+}
+nav {
+  margin-top:40px;
+}
+nav ul li{
+  padding:2vw;
+  transform: rotate(90deg);
+  list-style-type: none;
+}
+nav ul li:nth-of-type(3){
+  padding:3vw;
+}
+nav ul li a{
+  color: #0c0c0c;
+  font-size: 1.05vw;
+  letter-spacing:2px;
+}
+/****************************main***************************/
+main{
+  padding:0;
+  width:100%;
+  /* margin-left:10.7%;*/
+   height:100vh;
+}
+#flehome{
+  display: flex;
+  flex-direction:  row;
+}
+#hero_holder{
+  float:left;
+  width:70%;
+  height:100vh;
+  background:url("../images/thefabexperience11.jpg") no-repeat;
+  background-size:cover;
+  background-position: center;
+  overflow:hidden;
+}
+  #slogan{
+    width:30%;
+    height:100vh;
+   margin-left:0;
+   padding-top:0;
+}
+#slogan h2 {
+  left:15%;
+   top:5%;
+width:85%;
+  color:#000;
+  text-transform:uppercase;
+  font-size:24px;
+  margin:0;
+  line-height: 1.5;
+  letter-spacing:1px;
+}
+h2 span{
+  display:block;
+}
+
+section#aboutPage.ng-scope{
+  height:100%;
+    color:#000;
+    overflow-y: hidden;
+    display:flex;
+
+}
+section#aboutPage.ng-scope h2{
+  position: relative;
+  text-align: left;
+  font-size:17px;
+  letter-spacing:3px;
+  margin-bottom:25px;
+
+}
+section#aboutPage.ng-scope h2:after{
+  content: "";
+  background:black;
+  position: absolute;
+  bottom:0;
+  left:0;
+  height:6%;
+  width:55px;
+
+}
+
+section.ng-scope> :first-child{
+  width:calc(100% - 10%);
+  margin-left:3%;
+  padding-top:7vh;
+
+}
+section#aboutPage.ng-scope> :first-child p{
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing:0.5px;
+  padding-bottom:20px;
+  font-size: 17px;
+
+}
+section#aboutPage.ng-scope div:nth-of-type(2){
+  width:calc(100% - 40%);
+  background:white;
+  margin:0;
+  padding:0;
+  height:100%;
+}
+img{
+
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+#services{
+  width:100%;
+  height: 100%;
+}
+#services div:first-child{
+background:url('../images/IMG_3058.JPG');
+width:100%;
+height:20vh;
+}
+#services div p, #services h2, #services div div, #slogan h2 {
+  position: relative;
+
+}
+#services div p{
+  left:5%;
+  color:white;
+}
+#menu-page > div{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+#menu-page > div div:first-child h2{
+  font-size:50px;
+  text-align: center;
+  margin-bottom: 2vh;
+  
+}
+#menu-page > div >div:nth-of-type(1){
+  width:100%;
+  overflow: hidden;
+}
+
+
+#menu-page > div >div:first-child div{
+  font-size:20px;
+  font-weight:  400;
+  margin-left:2.5vw;
+  width:45%;
+  float:left;
+  padding-left:2vw;
+}
+#menu-page > div >div:nth-of-type(2){
+  background: #dce4e7;
+  margin-top: 1.5vh;
+}
+
+#menu-page > div >div:nth-of-type(2) div  div h3{
+  color: #1a1a1a;
+  font-size: 30px;
+  padding-top:2vw;
+  
+}
+#breakfast {
+ margin-left:4vw;
+}
+#salads{
+ margin-left:25vw;
+}
+#fingerfoods{
+  margin-left: 25vw;
+}
+.tab{
+  overflow: hidden;
+  border:1px solid #ccc;
+  background-color:#f1f1f1;
+}
+.tab button{
+  background-color: inherit;
+  float: left;
+  border:none;
+  outline:none;
+  cursor: pointer;
+  padding:14px 16px;
+  transition: 0.3s;
+  font-size:2vw;
+   margin-left:15vw;
+}
+.tablinks{
+  border: 1px solid red;
+}
+.tab button:hover{
+  background-color:#ddd;
+}
+.tab button{
+  background-color:#ccc;
+}
+.tab button.active{
+  background-color:transparent;
+}
+.tabcontent{
+  display: none;
+  padding:6px 12px;
+  border:1px solid #ccc;
+  border-top:none;
+}
+.tabcontent>div{
+  display:  flex;
+  flex-direction:  row;
+
+}
+
+
