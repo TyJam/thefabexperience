@@ -4,41 +4,62 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en-us"> <!--<![endif]-->
 <head>
-<meta charset='UTF-8'>
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title> thefabexperience</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='css/style.css' rel='stylesheet' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body ng-app="myApp">
    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
   <header>
-    <div id='header_wrapprer'>
-      <div id='logowrapper'>
-       <h1 class='logo'><a href="#/!"><span></span></a>Islandgirlelectric</h1>
+    <div id="header_wrapprer">
+      <div id="logowrapper">
+       <h1 class="logo"><a href="#/!"><span></span></a>thefabexperience</h1>
       </div>
+      <div id="openNav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn"  onclick="closeNav()">&times;
+        </a>
+      </div>
+      <div class="overlay-content">
         <nav>
-          <h2 hidden class='v-h'> Main Navigation</h2>
-          <ul>
+          <h2 hidden class="v-h"> Main Navigation</h2>
+          <ul id="closeMenu">
             <li>
-              <a href='#!about'>About </a>
+              <a class="clfullsceen" href="#!about">About </a>
             </li>
             <li>
-              <a href='#!services'>Services </a>
+              <a class="clfullsceen" href="#!services">Services</a>
             </li>
             <li>
-              <a href='#!menu'>Menu </a>
+              <a class="clfullsceen" href="#!menu">Menu </a>
             </li>
             <li>
-              <a href='#!contact'>contact</a>
+              <a class="clfullsceen" href="#!gallery">Gallery</a>
+            </li>
+            <li>
+              <a class="clfullsceen" href="#!contact">contact</a>
             </li>
           </ul>
         </nav>
       </div>
-    </header>
+  
+    <div id="socialmedias">
+      <a href="https://www.facebook.com/Thefabexperiencellc/" class="fa fa-facebook"></a>
+      <a href="https://www.instagram.com/thefabexperience/" class="fa fa-instagram"></a>  
+              
+    </div>
+    <div id="headerfooter">
+      <p>Copyright 2019 &copy; chefbrookbaker.com</p>
+      <p>Design by Tyrone Samuels</p>
+    </div>
+  </div>
+  </header>
         <main >
         <div ng-view></div>
         </main>
@@ -46,5 +67,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/site_scripts.js"></script>
 </body>
 </html>

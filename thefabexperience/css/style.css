@@ -2,6 +2,7 @@
 /*@import url('https://fonts.googleapis.com/css?family=Amatic+SC');*/
 @import url('https://fonts.googleapis.com/css?family=Alex+Brush');
 @import url('https://fonts.googleapis.com/css?family=Dosis');
+@import 'iconbox.scss';
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,
 acronym,address,big,cite,code,del,dfn,em,img,
@@ -35,6 +36,11 @@ html{
 body{
   line-height: normal;
   font-weight: 400;
+}
+body::after{
+ content: "";
+ clear: both;
+ display:table;
 }
 ol,ul{
   list-style:none;
@@ -84,6 +90,7 @@ body{
 a{
   text-decoration:none;
 }
+
 .v-h{
   position:absolute !important;
   height:1px; width: 1px;
@@ -123,9 +130,13 @@ h1.logo span{
 nav {
   margin-top:40px;
 }
+div#socialmedias, nav ul li, #headerfooter{
+  transform: rotate(90deg);
+
+}
+
 nav ul li{
   padding:2vw;
-  transform: rotate(90deg);
   list-style-type: none;
 }
 nav ul li:nth-of-type(3){
@@ -136,16 +147,43 @@ nav ul li a{
   font-size: 1.05vw;
   letter-spacing:2px;
 }
+div#socialmedias{
+  margin-top:3vw;
+}
+#headerfooter{
+  display: flex;
+  flex-direction: row;
+  position:absolute;
+  left:-225px;
+  bottom:300px;
+ 
+}
+#headerfooter > p{
+font-size:14px!important;
+margin-left: 1vw;
+}
+.fa {
+  padding:10px;
+  font-size:20px;
+  width:20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.closebtn{
+  display:none;
+}
+#openNav{
+  display: none;
+}
+
+
 /****************************main***************************/
 main{
   padding:0;
   width:100%;
   /* margin-left:10.7%;*/
    height:100vh;
-}
-#flehome{
-  display: flex;
-  flex-direction:  row;
 }
 #hero_holder{
   float:left;
@@ -155,6 +193,7 @@ main{
   background-size:cover;
   background-position: center;
   overflow:hidden;
+  position:relative;
 }
   #slogan{
     width:30%;
@@ -163,20 +202,36 @@ main{
    padding-top:0;
 }
 #slogan h2 {
-  left:15%;
+  left:5%;
    top:5%;
-width:85%;
+  width:100%;
+  
   color:#000;
   text-transform:uppercase;
   font-size:24px;
   margin:0;
-  line-height: 1.5;
   letter-spacing:1px;
+  padding-bottom:1vh;
+  padding-right:1vw;
 }
 h2 span{
   display:block;
+  margin-bottom:0.9vh;
 }
-
+#slogan2{
+  position: absolute;
+  top:40%;
+  left:40%;
+   padding: 3vh 2vw;
+  border: 1px solid #ffffff;;
+}
+#slogan2 > h2{
+  color:#fff;
+  font-family:'Dosis', sans-serif;
+  font-weight: 500;
+  line-height: 2;
+  text-align:  center;
+}
 section#aboutPage.ng-scope{
   height:100%;
     color:#000;
@@ -185,28 +240,16 @@ section#aboutPage.ng-scope{
 
 }
 section#aboutPage.ng-scope h2{
-  position: relative;
-  text-align: left;
   font-size:17px;
   letter-spacing:3px;
   margin-bottom:25px;
 
 }
-section#aboutPage.ng-scope h2:after{
-  content: "";
-  background:black;
-  position: absolute;
-  bottom:0;
-  left:0;
-  height:6%;
-  width:55px;
-
-}
-
 section.ng-scope> :first-child{
   width:calc(100% - 10%);
   margin-left:3%;
   padding-top:7vh;
+  padding-right:1vw;
 
 }
 section#aboutPage.ng-scope> :first-child p{
@@ -217,14 +260,19 @@ section#aboutPage.ng-scope> :first-child p{
   font-size: 17px;
 
 }
+.w-restore{
+  width:100%!important;
+}
 section#aboutPage.ng-scope div:nth-of-type(2){
   width:calc(100% - 40%);
   background:white;
-  margin:0;
   padding:0;
   height:100%;
 }
-img{
+#services > div, section#aboutPage.ng-scope div:nth-of-type(2), #menu-page > div, #contact> div{
+margin:0;
+}
+img:not(#servProvide > div:nth-of-type(2) div> img){
 
   width:100%;
   height:100%;
@@ -232,25 +280,54 @@ img{
 }
 #services{
   width:100%;
-  height: 100%;
+  height:100vh;
+  overflow: hidden;
 }
-#services div:first-child{
-background:url('../images/IMG_3058.JPG');
-width:100%;
-height:20vh;
+#services>div:first-child{
+background:url('../images/IMG_3058.JPG') no-repeat;
+width:30%;
+height:100%;
+background-size:cover;
+float:left;
 }
 #services div p, #services h2, #services div div, #slogan h2 {
   position: relative;
 
 }
+#services> div > h2, section#aboutPage.ng-scope h2{
+  text-align: center;
+  font-size:3vw;
+}
 #services div p{
-  left:5%;
-  color:white;
+  font-size:1.5vw;
+  line-height:35px;
+}
+#servProvide{
+  float:left;
+  width:65%;
+  padding-left:3vw;
+}
+#servProvide>div:nth-of-type(2){
+  display:  flex;
+   flex-direction:  row;
+   margin-top:5vh;
+}
+#servProvide>div:nth-of-type(2) div{
+  width:350px;
+  height:350px;
+}
+#servProvide>div:nth-of-type(2) div>h3{
+   font-size: 22px;
+   font-weight:  600;
+   margin-left:17%;
+  
+}
+#servProvide>div:nth-of-type(2) div:nth-of-type(1) h3{
+  margin-left:25%;
 }
 #menu-page > div{
   width:100%;
   height:100%;
-  margin:0;
   padding:0;
 }
 #menu-page > div div:first-child h2{
@@ -263,7 +340,6 @@ height:20vh;
   width:100%;
   overflow: hidden;
 }
-
 
 #menu-page > div >div:first-child div{
   font-size:20px;
@@ -290,9 +366,6 @@ height:20vh;
 #salads{
  margin-left:25vw;
 }
-#fingerfoods{
-  margin-left: 25vw;
-}
 .tab{
   overflow: hidden;
   border:1px solid #ccc;
@@ -304,7 +377,7 @@ height:20vh;
   border:none;
   outline:none;
   cursor: pointer;
-  padding:14px 16px;
+  padding:5px 16px;
   transition: 0.3s;
   font-size:2vw;
    margin-left:15vw;
@@ -326,10 +399,440 @@ height:20vh;
   padding:6px 12px;
   border:1px solid #ccc;
   border-top:none;
+  height:100vh;
 }
-.tabcontent>div{
+.tabcontent>h3{
+  text-transform:uppercase;
+  font-size:20px;
+  color:#1a1a1a;
+}
+.tabcontent>h3, .tabcontent>div>dl{
+  margin-left:5vw;
+}
+
+.tabcontent>div>dl>dt{
+  text-transform:uppercase; 
+  font-weight:  700;
+  margin-top:0.3vw;
+}
+.tabcontent>div>dl>dd{
+  margin-top:0.1vw;
+}
+#contact{
+width:100vw;
+height:100vh;
+}
+#contact> div, .tabcontent>div,#flehome{
   display:  flex;
   flex-direction:  row;
+  padding-top:0;
+
+}
+#contact > div{
+  height:100%;
+}
+
+#contact > div>div:nth-of-type(1){
+  width:75%;
+  padding-top:2vw;
+  padding-left:5vw;
+  padding-right:5vw;
+
+}
+#contact > div>div:nth-of-type(2){
+  background: url("../images/thefabexperince-foodie.JPG")no-repeat;
+  width:60%;
+  background-size:  cover;
+}
+#contact > div>div:nth-of-type(1) h2{
+   font-size:6vw;
+   margin-bottom:15px;
+   text-transform:  uppercase;
+   line-height:50px;
+   height: auto !important;
+}
+#contact > div>div:nth-of-type(1) p{
+  font-size:1.5vw;
+  line-height: 40px;
+  margin-bottom:1vw;
+}
+#contact > div>div:nth-of-type(1) p>a{
+  color:black;
+  text-decoration:underline;
+}
+.form-group{
+  margin-bottom: 1rem;
+}
+.form-control-wrap{
+  position: relative;
+}
+.form-control{
+border:2px solid #000 !important;
+border-radius : 0 !important;
+}
+.form-control{
+  display: block;
+  width:100%;
+  padding:0.475rem 0.85rem;
+  color:#284868;
+}
+input[type="text"],
+input[type="submit"],
+input[type="button"], input[type="password"],
+input[type="email"], textarea{
+  -webkit-appearance:none;
+}
+.btn-default{
+  border:2px solid #000;
+  color:#fff;
+  background:#000;
+  padding: 8px 50px 5px 50px;
+  font-size:13px;
+  text-transform: uppercase;
+  transition:0.3s;
+  font-weight: bold;
+  letter-spacing:3px;
+  text-decoration:none;
+}
+/*div#overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  background:black;
+  opacity:0.85;
+}
+hide overlay and big-image
+div#overlay.hidden, img#big-image.hidden{opacity:0; left:-200%;}
+
+/*resize images and display them as a horizontal list
+li.lightbox img{height:100px;}
+li.lightbox{display:inline-block; margin:10px;}
+
+/*new Css rule for showing the big-image
+#big-image.showing{
+  max-width:80%;
+  max-height:90%;
+  position: absolute;
+  background-color:white;
+  padding:10px;
+  top:20%;
+  left:50%;
+}*/
+.mySlides{display:none; height:534px; width:50%; margin:0 auto;}
+.mySlides>img{vertical-align:middle;}
+.slideshow-container{
+  width:100%;
+  height:100%;
+  position:relative;
+  margin:auto;
+}
+
+/*******************************************************************************
+*                                                                              *
+*                                      media queries                           *
+*                                                                              */
+@media screen and (min-width: 860px) and (max-width: 1280px){
+
+   .fixbody{
+    overflow: visible;
+    
+   }
+   .fixheader{
+     position: fixed;
+     height:100%;
+   }
+   .fixmain{
+     margin-left:12vw;
+   }
+   nav ul li{
+     padding:3vw;
+   }
+   section#aboutPage.ng-scope >:first-child{
+     padding-top:1vh; 
+   }
+   #slogan2{
+     left:5%;
+     right:5%;
+     font-size:14px;
+     padding: 3vh 3.5vw;
+   }
+   
+   section#aboutPage.ng-scope div:nth-of-type(2){
+     width: 40%;
+     height:100vh;
+   }
+   section#aboutPage.ng-scope> :first-child p {
+    padding-bottom: 6px;
+    padding-right:1vw;
+    line-height: 22px;
+   }
+   section#aboutPage.ng-scope div:nth-of-type(2)> img{
+      width:100%;
+      height:100%;
+   }
+  
+   .tab button{
+    margin-left: 12vw;
+   }
+   
+   #servProvide{
+    padding-left:1vw;
+  }
+
+ #servProvide>div:nth-of-type(2) div {
+     width: 175px;
+     margin-left:5vw;
+     height:175px;
+ }
+ #servProvide>div:nth-of-type(2) div:first-child {
+   margin-left:0;
+ }
+ #servProvide>div:nth-of-type(2) div>h3{
+   font-size:inherit;
+ }
+ .serviceImg{
+   width:100%;
+   height:100%;
+ }
+ #slogan{
+   width:50%;
+ }
+ #slogan h2{
+      left:5%;
+      line-height:1.4;
+      font-size:22px
+ }
+ #contact > div>div:nth-of-type(1) p{
+   line-height:25px;
+   
+ }
+
+}
+
+@media screen and (max-width: 860px){
+  #openNav{
+    display:block;
+  }
+ body{
+   flex-direction: column;
+   width:100%;;
+   overflow:visible;
+ } 
+  header{
+  position: fixed;
+  height:15vh;
+  width: 100%;
+  box-shadow:0 1px 1px 0 rgba(0, 0, 0, .12);
+}
+div#header_wrapprer, #logowrapper, h1.logo{
+height:100%;
+}
+h1.logo span{
+  background-size: 100% 100%;
+}
+nav{ margin-top:0;}
+nav ul li{transform:rotate(0deg);text-align: center;}
+nav ul li a{
+    font-size:5vw;
+  }
+  div#socialmedias{
+    transform:  rotate(0deg);
+    position: absolute;
+    left:40%;
+    top:80%;
+    display: flex;
+    flex-direction: row;
+
+  }
+
+ main{
+   margin-top:10vh;
+   height: auto;
+ }
+ main, #menu-page, #services, #contact {
+   margin-top:10vh;
+ }
+  #flehome{
+    flex-direction:column-reverse;
+    height:100%;
+    padding-top:0;
+  }
+  #slogan, #hero_holder, section#aboutPage.ng-scope div:nth-of-type(2){
+    width:100%;
+  }
+  #slogan2{
+    position: absolute;
+
+     padding: 2vh 1vw;
+    border: 1px solid #ffffff;;
+  }
+  #slogan2 > h2{
+    color:#fff;
+    font-size:3vw;
+    font-family:'Dosis', sans-serif;
+    font-weight: 500;
+    line-height: 2
+  }
+
+  #aboutPage{
+    flex-direction: column;
+  }
+  section#aboutPage.ng-scope> :first-child p{
+    font-size:20px;
+    padding-left:1vw;
+    padding-right:1vw;
+  }
+
+  section#aboutPage.ng-scope div:nth-of-type(2) img{
+    width: 100%;
+  }
+
+  
+  #hero_holder{
+    margin-top:5vh;
+   /* height: 30vh;*/
+  }
+  #slogan{
+  }
+  #slogan h2{
+  left:10%;
+  font-size:4vw;
+  top:5%;
+
+  }
+  h2 span{
+  display: inline;
+  }
+  #servProvide>div:nth-of-type(2), #services, #flehome, .tab{
+    display:flex;
+  }
+  .tab{
+    flex-direction: column;
+  }
+  .tab button{
+    margin-left:0;
+    font-size:100%;
+    padding-bottom: 10px;
+}
+  .tabcontent{
+    height:100%;
+  }
+  .tabcontent>div{
+    flex-direction: column;
+  }
+  #menu-page > div >div:first-child div{
+    font-size:inherit;
+    float:none;
+    width:100%;
+    padding-right:2vw;
+  }
+   #services{
+     flex-direction: column-reverse;
+     height:auto;
+   }
+   #servProvide>div:nth-of-type(2), #contact> div{
+     flex-direction: column;
+   }
+   #servProvide{
+     width:100%;
+     padding-right:1.5%;
+   }
+   #services>div:first-child{
+     width:100%;
+     height:600px;
+   }
+   #servProvide>div:nth-of-type(2) div {
+     width:200px;  
+     margin: auto auto;
+
+
+}
+#servProvide>div:nth-of-type(2) div>h3{
+   margin-left:10%;
+   width:100%;
+}
+#servProvide>div:nth-of-type(2) div:nth-of-type(1) h3 {
+  margin-left:20%;
+}
+
+   #services div > h2{
+     font-size:7vw;
+   }
+   #services div p {
+    font-size: 100%;
+    line-height: 35px;
+   }
+#contact > div>div:nth-of-type(2){
+  display:none;
+}
+#contact> div, #contact > div>div:nth-of-type(1){
+  width:100%;
+}
+#contact > div>div:nth-of-type(1) p{
+  font-size:4.5vw;
+  font-weight: 200;
+  margin-bottom:6vh;
+}
+#menu-page > div >div:nth-of-type(1) p {
+  font-size: 4vw;
+  padding-right: 5vw;
+}
+#openNav{
+  position:  absolute;
+  width:10vw;
+  height:6vh;
+  top:20%;
+  left:90%;
+  display: none;
+}
+.mq-restore{
+  width:0%;
+}
+
+.overlay{
+  height:100%;
+  width:0;
+  position: fixed;
+  z-index:1;
+  top:0;
+  left:0;
+  background-color:rgb(0, 0, 0);
+  background-color:rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition:0.5s;
+}
+.overlay-content{
+  position: relative;
+  top:25%;
+  width:100%;
+  text-align: center;
+  margin-top:30px;
+}
+.overlay a{
+  padding:8px;
+  text-decoration: none;
+  font-size:36px;
+  color:#818181;
+  display: block;
+  transition:0.3s;
+}
+.overlay a:hover, .overlay a:focus{
+  color:#f1f1f1;
+}
+.overlay .closebtn{
+  position: absolute;
+  top:20px;
+  right:45px;
+  font-size:60px;
+}
+.closebtn{
+  display:block;
+}
+#openNav{
+  display: block;
+}
 
 }
 
